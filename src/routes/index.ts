@@ -25,6 +25,12 @@ const routes = [
     name: 'config',
     icon: 'rest',
   },
+  {
+    path: '/login',
+    component: '@/pages/login/index',
+    name: 'login',
+    icon: 'rest',
+  },
 ];
 
 export default routes;
