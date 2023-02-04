@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { message } from 'antd';
+import { getLocalStorage } from '@/utils/auth';
+import { signature } from '@/utils/signature.js';
 
 let service = axios.create({
   baseURL: '/api', // api的base_url
@@ -11,11 +12,13 @@ service.interceptors.request.use(
   (config: any) => {
     // 发送网络请求时, 在界面的中间位置显示Loading的组件,使用ant-design插件，这里不再赘述
     //请求携带的信息
-    // config.headers = {
-    //   'Content-Type': 'application/json',
-    //   'x-token': '',
-    //   ...config.headers,
-    // };
+    if (getLocalStorage('token')) {
+      config.headers['accessToken'] = getLocalStorage('token');
+      config.headers['signature'] = signature(
+        getLocalStorage('token'),
+        getLocalStorage('paramSig'),
+      );
+    }
     return config;
   },
   (err) => {

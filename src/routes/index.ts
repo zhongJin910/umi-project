@@ -1,6 +1,8 @@
 const routes = [
-  { path: '/', component: '@/pages/index' },
-
+  {
+    path: '/',
+    component: '@/pages/index',
+  },
   {
     path: '/test',
     component: '@/pages/test/index',

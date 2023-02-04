@@ -1,6 +1,3 @@
-const TokenKey = 'ZHYKJ-Token';
-const ParamSig = 'ZHYKJ-PARAM-SIG';
-
 export function getLocalStorage(key: string) {
   return localStorage.getItem(key);
 }

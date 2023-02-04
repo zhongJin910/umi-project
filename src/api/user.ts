@@ -26,3 +26,12 @@ export function logout(data: any) {
     data,
   });
 }
+
+// 获取用户信息
+export function getUserInfo() {
+  return fetch({
+    url: '/qzd-bff-operation/qzd/v1/account/index',
+    method: 'post',
+    headers: jsonType,
+  });
+}

@@ -5,7 +5,7 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  layout: { name: 'umi react' },
+  layout: { name: 'umi react', flatMenu: true },
   routes,
   fastRefresh: {},
   proxy: {
@@ -15,4 +15,8 @@ export default defineConfig({
       changeOrigin: true,
     },
   },
+  // dva: {
+  //   immer: true, // 是否启用 immer 以方便修改 reducer
+  //   hmr: false // 是否启用 dva model 的热更新
+  // }
 });
